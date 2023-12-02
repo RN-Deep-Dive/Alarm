@@ -3,6 +3,7 @@ import React from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import MainBtn from "../components/atoms/MainBtn";
 import { colors } from "../constants/colors";
+import StyledText from "../components/atoms/StyledText";
 
 const ProblemScreen: React.FC<
   NativeStackScreenProps<any, "ProblemScreen">
@@ -14,6 +15,12 @@ const ProblemScreen: React.FC<
         onPress={() => {}}
         subText={"1/299회 누름"}
         color="red"
+      />
+      <StyledText
+        text={"hello"}
+        fontSize="md"
+        color={colors.textDim}
+        onPress={() => {}}
       />
     </View>
   );
