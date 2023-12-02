@@ -10,17 +10,12 @@ const Btn = styled.TouchableOpacity`
   align-items: center;
 `;
 
-const handleTextClick = () => {
-  Alert.alert('Text Clicked!', 'You clicked the text!');
-};
-
 const AlarmScreen: React.FC<NativeStackScreenProps<any, "AlarmScreen">> = ({
   navigation: { navigate },
 }) => {
   return (
     <Btn onPress={() => navigate("Stack", { screen: "Three" })}>
       <Text>AlarmScreen</Text>
-      <StyledText text="Click me!" fontSize={10} color="blue" isBold={true} onPress={handleTextClick}></StyledText>
     </Btn>
   );
 };
