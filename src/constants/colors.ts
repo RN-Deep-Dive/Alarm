@@ -6,6 +6,8 @@ const palette: Record<string, string> = {
   blue100: "#6494C6",
   blue200: "#007DFF",
   purple: "#873BC2",
+  blue: "#007DFF",
+  gray: "gray",
 
   neutral100: "#FFFFFF",
   // neutral200: "#F4F2F1",

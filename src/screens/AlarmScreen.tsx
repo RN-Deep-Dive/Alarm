@@ -13,6 +13,8 @@ const Btn = styled.TouchableOpacity`
 const AlarmScreen: React.FC<NativeStackScreenProps<any, "AlarmScreen">> = ({
   navigation: { navigate },
 }) => {
+  const [toggleCheckBox, setToggleCheckBox] = useState(false)
+  const onPress = () => {};
   return (
     <Btn onPress={() => navigate("Stack", { screen: "Three" })}>
       <Text>AlarmScreen</Text>
