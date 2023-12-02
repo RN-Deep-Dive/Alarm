@@ -1,6 +1,10 @@
 // TODO: write documentation for colors and palette in own markdown file and add links from here
 
+import { PlatformColor } from "react-native";
+
 const palette: Record<string, string> = {
+  blue100: "#6494C6",
+  blue200: "#007DFF",
   purple: "#873BC2",
 
   neutral100: "#FFFFFF",
@@ -9,7 +13,7 @@ const palette: Record<string, string> = {
   // neutral400: "#B6ACA6",
   // neutral500: "#978F8A",
   neutral600: "#BBBBBB",
-  // neutral700: "#3C3836",
+  neutral700: "#ABB0BA",
   // neutral800: "#191015",
   neutral900: "#000000",
 
@@ -32,8 +36,8 @@ const palette: Record<string, string> = {
   // accent400: "#FBC878",
   // accent500: "#FFBB50",
 
-  // angry100: "#F2D6CD",
-  // angry500: "#C03403",
+  angry100: "#FF2F2F",
+  angry500: "#D63031",
 
   // overlay20: "rgba(25, 16, 21, 0.2)",
   // overlay50: "rgba(25, 16, 21, 0.5)",
@@ -46,41 +50,28 @@ export const colors = {
    * semantic names as much as possible.
    */
   palette,
-  /**
-   * A helper for making something see-thru.
-   */
+
   transparent: "rgba(0, 0, 0, 0)",
-  /**
-   * The default text color in many components.
-   */
+
   text: palette.neutral900,
-  /**
-   * Secondary text information.
-   */
+
   textDim: palette.neutral600,
-  /**
-   * The default color of the screen background.
-   */
+
+  btnGray: palette.neutral700,
+
   background: palette.neutral200,
-  /**
-   * The default border color.
-   */
+
   border: palette.neutral400,
-  /**
-   * The main tinting color.
-   */
+
   tint: palette.purple,
-  /**
-   * A subtle color used for lines.
-   */
+
   separator: palette.neutral300,
-  /**
-   * Error messages.
-   */
-  error: palette.angry500,
-  /**
-   * Error Background.
-   *
-   */
-  errorBackground: palette.angry100,
+
+  inactiveBlue: palette.blue100,
+
+  blue: palette.blue200,
+
+  error: palette.angry100,
+
+  errorBackground: palette.angry500,
 };
