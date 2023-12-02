@@ -6,7 +6,6 @@ const palette: Record<string, string> = {
   blue100: "#6494C6",
   blue200: "#007DFF",
   purple: "#873BC2",
-  blue: "#007DFF",
   gray: "gray",
 
   neutral100: "#FFFFFF",
@@ -14,6 +13,7 @@ const palette: Record<string, string> = {
   // neutral300: "#D7CEC9",
   // neutral400: "#B6ACA6",
   // neutral500: "#978F8A",
+  neutral550: "#CECECE",
   neutral600: "#BBBBBB",
   neutral700: "#ABB0BA",
   // neutral800: "#191015",
@@ -52,11 +52,16 @@ export const colors = {
    * semantic names as much as possible.
    */
   palette,
-
+  /**
+   * A helper for making something see-thru.
+   */
   transparent: "rgba(0, 0, 0, 0)",
 
   text: palette.neutral900,
-
+  /**
+   * Secondary text information.
+   */
+  shadow: palette.neutral550,
   textDim: palette.neutral600,
 
   btnGray: palette.neutral700,
