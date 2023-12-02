@@ -2,6 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import styled from "styled-components/native";
 import { colors } from "../../constants/colors";
+import { spacing } from "../../constants/spacing";
 
 const Btn = styled.TouchableOpacity`
   background-color: ${(props) => {
@@ -35,7 +36,7 @@ interface MainBtnProps {
 
 const MainBtn: React.FC<MainBtnProps> = ({
   text = "버튼",
-  fontSize = 20,
+  fontSize = spacing.lg,
   color = "blue",
   onPress,
   subText = "",
