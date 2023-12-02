@@ -8,7 +8,7 @@ export const CheckBtn:React.FC = () => {
   return (
     <Checkbox
     disabled={false}
-    color={toggleCheckBox? colors.palette.blue : colors.palette.gray}
+    color={toggleCheckBox? colors.palette.blue200 : colors.palette.gray}
     value={toggleCheckBox}
     onValueChange={(newValue) => setToggleCheckBox(newValue)}
   />
