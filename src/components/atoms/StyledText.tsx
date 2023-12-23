@@ -5,6 +5,8 @@ import { spacing } from "../../constants/spacing";
 
 const getFontSize = (fontSize) => {
   switch (fontSize) {
+    case "xs":
+      return `${spacing.xs}px`;
     case "md":
       return `${spacing.md}px`;
     case "lg":
@@ -22,7 +24,7 @@ const SText = styled.Text`
   font-weight: ${(props) => (props.isBold ? "bold" : "normal")};
 `;
 
-type FontSize = "md" | "lg" | "header";
+type FontSize = "xs" | "md" | "lg" | "header";
 
 interface StyledTextProps {
   text?: string;
@@ -31,6 +33,14 @@ interface StyledTextProps {
   isBold?: boolean;
   onPress?: () => void;
 }
+
+/**
+ * @param {string} text - 표시할 텍스트.
+ * @param {FontSize} fontSize - 텍스트의 폰트 크기 ('md', 'lg' 중 하나).
+ * @param {string} color - 텍스트의 색상.
+ * @param {boolean} isBold - 텍스트를 굵게 할지 여부.
+ * @param {Function} onPress - 텍스트를 눌렀을 때 실행할 함수.
+ */
 
 const StyledText: React.FC<StyledTextProps> = ({
   text,
