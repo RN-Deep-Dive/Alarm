@@ -7,11 +7,13 @@ import { colors } from "../constants/colors";
 import { useColorScheme } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import useHeight from "../utils/useHeight";
 
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
   const isDark = useColorScheme() === "dark";
+  const { NOTCH_BOTTOM } = useHeight();
 
   return (
     <Tab.Navigator
@@ -20,7 +22,7 @@ const Tabs = () => {
         tabBarInactiveTintColor: colors.textDim,
         tabBarStyle: {
           backgroundColor: isDark ? "black" : "white",
-          height: 60,
+          height: 60 + NOTCH_BOTTOM,
         },
         tabBarLabelStyle: {
           fontSize: 12,
