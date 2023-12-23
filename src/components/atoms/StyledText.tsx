@@ -11,6 +11,7 @@ const getFontSize = (fontSize) => {
       return `${spacing.md}px`;
     case "lg":
       return `${spacing.lg}px`;
+    case "xxxl":
     case "header":
       return `${spacing.xxxl}px`;
     default:
@@ -24,7 +25,7 @@ const SText = styled.Text`
   font-weight: ${(props) => (props.isBold ? "bold" : "normal")};
 `;
 
-type FontSize = "xs" | "md" | "lg" | "header";
+type FontSize = "xs" | "md" | "lg" | "header" | "xxxl";
 
 interface StyledTextProps {
   text?: string;
