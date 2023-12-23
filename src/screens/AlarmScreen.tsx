@@ -1,5 +1,5 @@
 import { View, Text, Alert } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import StyledText from "../components/atoms/StyledText";

@@ -1,27 +1,53 @@
 // CustomText.tsx
 
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+} from "react-native";
+import { spacing } from "../../constants/spacing";
+import styled from "styled-components/native";
 
-type FontSize = 10 | 20 | 30;
+const SText = styled.Text`
+  font-size: ${(props) => {
+    if (props.fontSize === "md") {
+      return `${spacing.md}px`;
+    } else if (props.fontSize === "lg") {
+      return `${spacing.lg}px`;
+    } else {
+      return `${props.fontSize}px`;
+    }
+  }};
+  color: ${(props) => props.color};
+  font-weight: ${(props) => (props.isBold ? "bold" : "normal")};
+`;
+
+type FontSize = "md" | "lg";
 
 interface StyledTextProps {
-  text: string;
-  fontSize: FontSize;
-  color: string;
-  isBold: boolean;
-  onPress: () => void;
+  text?: string;
+  fontSize?: FontSize;
+  color?: string;
+  isBold?: boolean;
+  onPress?: () => void;
 }
 
-const StyledText: React.FC<StyledTextProps> = ({ text, fontSize, color, isBold, onPress }) => {
+const StyledText: React.FC<StyledTextProps> = ({
+  text,
+  fontSize,
+  color,
+  isBold,
+  onPress,
+}) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
-      <Text style={{ 
-        fontSize: fontSize, 
-        color: color,
-        fontWeight: isBold ? 'bold' : 'normal',
-        }}>{text}</Text>
-    </TouchableOpacity>
+    <TouchableWithoutFeedback onPress={onPress} style={styles.container}>
+      <SText fontSize={fontSize} color={color} isBold={isBold}>
+        {text}
+      </SText>
+    </TouchableWithoutFeedback>
   );
 };
 
