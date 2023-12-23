@@ -1,34 +1,21 @@
-import { View, Text } from "react-native";
-import React from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import MainBtn from "../components/atoms/MainBtn";
-import { colors } from "../constants/colors";
-import StyledText from "../components/atoms/StyledText";
+import React from "react";
+import Container from "../components/atoms/Container";
 import { FloatingBtn } from "../components/atoms/FloatingBtn";
+import MainPageHeader from "../components/molecules/MainPageHeader";
 
-const ProblemScreen: React.FC<
-  NativeStackScreenProps<any, "ProblemScreen">
-> = () => {
+const ProblemScreen: React.FC<NativeStackScreenProps<any, "ProblemScreen">> = ({
+  navigation,
+}) => {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center", position: "relative" }}>
-      <MainBtn
-        text={"비상 탈출 버튼"}
-        onPress={() => { }}
-        subText={"1/299회 누름"}
-        color="red"
+    <Container>
+      <MainPageHeader title="Problem Set" />
+      <FloatingBtn
+        onPress={() => navigation.navigate("CreateProblem")}
+        iconName="plus"
+        iconSize={15}
       />
-
-      <StyledText
-        text={"hello"}
-        fontSize="md"
-        color={colors.textDim}
-        onPress={() => {}}
-      />
-
-      <Text>ProblemScreen</Text>
-      <FloatingBtn onPress={() => console.log('hello')} iconName="plus" iconSize={15} />
-
-    </View>
+    </Container>
   );
 };
 

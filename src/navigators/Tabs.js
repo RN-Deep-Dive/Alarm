@@ -1,13 +1,12 @@
-import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import AlarmScreen from "../screens/AlarmScreen";
-import ProblemScreen from "../screens/ProblemScreen";
-import ShopScreen from "../screens/ShopScreen";
-import { colors } from "../constants/colors";
-import { useColorScheme } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import React from "react";
+import { useColorScheme } from "react-native";
+import { colors } from "../constants/colors";
+import ShopScreen from "../screens/ShopScreen";
 import useHeight from "../utils/useHeight";
+import AlarmStack from "./AlarmStack";
+import ProblemStack from "./ProblemStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -17,6 +16,9 @@ const Tabs = () => {
 
   return (
     <Tab.Navigator
+      sceneContainerStyle={{
+        backgroundColor: "white",
+      }}
       screenOptions={{
         tabBarActiveTintColor: colors.tint,
         tabBarInactiveTintColor: colors.textDim,
@@ -30,11 +32,12 @@ const Tabs = () => {
           marginTop: -5,
           marginBottom: 10,
         },
+        headerShown: false,
       }}
     >
       <Tab.Screen
-        name="Alarm"
-        component={AlarmScreen}
+        name="AlarmStack"
+        component={AlarmStack}
         options={{
           tabBarLabel: "알람",
           tabBarIcon: ({ focused, color, size }) => (
@@ -43,8 +46,8 @@ const Tabs = () => {
         }}
       />
       <Tab.Screen
-        name="Problem"
-        component={ProblemScreen}
+        name="ProblemStack"
+        component={ProblemStack}
         options={{
           tabBarLabel: "문제",
           tabBarIcon: ({ focused, color, size }) => (

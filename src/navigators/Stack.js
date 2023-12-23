@@ -1,3 +1,5 @@
+// BottomTabBar가 없는 화면을 위한 내비게이션입니다
+
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Text, View, TouchableOpacity } from "react-native";
