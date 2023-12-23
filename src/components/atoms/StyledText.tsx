@@ -17,6 +17,8 @@ const SText = styled.Text`
       return `${spacing.md}px`;
     } else if (props.fontSize === "lg") {
       return `${spacing.lg}px`;
+    } else if (props.fontSize === "xxxl") {
+      return `${spacing.xxxl}px`;
     } else {
       return `${props.fontSize}px`;
     }
@@ -25,7 +27,7 @@ const SText = styled.Text`
   font-weight: ${(props) => (props.isBold ? "bold" : "normal")};
 `;
 
-type FontSize = "md" | "lg";
+type FontSize = "md" | "lg" | "xxxl";
 
 interface StyledTextProps {
   text?: string;
