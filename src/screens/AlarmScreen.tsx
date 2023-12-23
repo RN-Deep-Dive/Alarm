@@ -1,22 +1,22 @@
-import { View, Text, Alert } from "react-native";
-import React, { useState } from "react";
-import styled from "styled-components/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import StyledText from "../components/atoms/StyledText";
-
-const Btn = styled.TouchableOpacity`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-`;
+import React from "react";
+import Container from "../components/atoms/Container";
+import MainPageHeader from "../components/molecules/MainPageHeader";
+import { FloatingBtn } from "../components/atoms/FloatingBtn";
 
 const AlarmScreen: React.FC<NativeStackScreenProps<any, "AlarmScreen">> = ({
-  navigation: { navigate },
+  navigation,
 }) => {
   return (
-    <Btn onPress={() => navigate("Stack", { screen: "Three" })}>
-      <Text>AlarmScreen</Text>
-    </Btn>
+    <Container>
+      <MainPageHeader title="Alarm List" />
+      {/* 여기에 body 추가 */}
+      <FloatingBtn
+        onPress={() => navigation.navigate("CreateAlarm")}
+        iconName="plus"
+        iconSize={15}
+      />
+    </Container>
   );
 };
 
